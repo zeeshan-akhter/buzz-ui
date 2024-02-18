@@ -1,0 +1,33 @@
+.badge {
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.badge_with_icons {
+  position: relative;
+}
+
+.badge_with_icons .badge_with_icons_content {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge_component {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .badge_component {
+    gap: 20px;
+  }
+}

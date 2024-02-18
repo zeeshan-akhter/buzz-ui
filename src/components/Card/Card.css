@@ -1,0 +1,79 @@
+.card_with_badge {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid lightgray;
+  padding: 10px 15px 40px;
+  min-width: 300px;
+  max-width: 100vw;
+}
+
+.card_with_badge .card_with_badge_badge {
+  align-self: flex-end;
+}
+
+.card_with_dismiss_dismiss:hover {
+  cursor: pointer;
+}
+
+.card_with_text_overlay {
+  border: 1px solid lightgray;
+  position: relative;
+}
+
+.card_with_text_overlay img {
+  padding: 15px;
+  width: 100%;
+}
+
+.card_with_text_overlay .overlay {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(90, 88, 88, 0.5);
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #fff;
+}
+
+.text_only_card {
+  border: 1px solid lightgray;
+  padding: 30px 15px;
+  min-width: 300px;
+}
+
+.vertical_card {
+  border: 1px solid lightgray;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.vertical_card .vertical_card_text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 10px 0;
+}
+
+.horizontal_card {
+  flex-direction: row;
+}
+
+.card_component {
+  display: flex;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .card_with_badge {
+    min-width: 350px;
+  }
+}

@@ -1,38 +1,159 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+:root {
+  --primary-color: #00A9FF;
+  --secondary-color: #00aaffc0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 1.25rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  font-size: 0.9rem;
+}
+
+h3,
+p,
+button {
+  font-size: 0.8rem;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  grid-area: sidebar;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-around;
+  align-items: start;
+  list-style: none;
+  background: #fff;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar .navlink {
+  padding: 10px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--primary-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.sidebar .navlink_select {
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+}
+
+.sidebar .navlink:hover {
+  cursor: pointer;
+  background: var(--primary-color);
+  font-weight: bold;
+  color: #fff;
+}
+
+/* APP */
+
+.App {
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "header"
+    "content"
+    "content"
+    "content"
+    "content"
+    "content";
+  height: 100vh;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.content {
+  grid-area: content;
+  margin: 8px;
+}
+
+.content_w_sb {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "sidebar" "description" "description" "description";
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 1.75em;
   }
-  to {
-    transform: rotate(360deg);
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3,
+  p,
+  button {
+    font-size: 1rem;
+  }
+
+  /* SIDEBAR */
+
+  .sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: start;
+    list-style: none;
+    background: #fff;
+    position: fixed;
+    width: 20%;
+  }
+
+  .sidebar .navlink {
+    width: 100%;
+  }
+
+  /* APP */
+
+  .App {
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+      "header"
+      "content"
+      "content"
+      "content"
+      "content"
+      "content"
+      "content"
+      "content";
+  }
+
+  .content_w_sb {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar description description description description";
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.35rem;
   }
 }
